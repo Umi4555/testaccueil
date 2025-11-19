@@ -1,0 +1,275 @@
+:root {
+  /* Nouvelle Palette de Couleurs Professionnelle */
+  --primary-bg: #0F1626; /* Fond très foncé, presque noir-bleu */
+  --secondary-bg: #1A2438; /* Fond des cartes/chatbot */
+  --accent-blue: #4A90E2; /* Bleu professionnel pour les boutons et accents */
+  --accent-hover: #5C9FEF; /* Bleu plus clair pour les survols */
+  --text-light: #E0E0E0;
+  --text-muted: #B0B9C9;
+  --border-color: #3A455E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* Utilisation d'un dégradé subtil et professionnel */
+  background: linear-gradient(135deg, var(--primary-bg) 0%, #172033 100%);
+  color: var(--text-light);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.portal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem; /* Plus d'espace vertical */
+}
+
+.portal-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2.5rem;
+  background: rgba(26, 36, 56, 0.7); /* Plus de transparence */
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+}
+
+.portal-header h1 {
+  font-size: 3rem;
+  color: var(--text-light);
+  font-weight: 700;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.portal-header p {
+  color: var(--text-muted);
+  font-weight: 300;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cartes un peu plus larges */
+  gap: 2rem;
+}
+
+.portal-card {
+  background: var(--secondary-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.portal-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  /* Effet de bordure subtil avec l'accent bleu */
+  border-color: var(--accent-blue);
+  /* Ajout d'une légère lueur */
+  background-color: #1F2C46;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.card-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  /* Utilisation du bleu pour les icônes (via text-shadow ou couleur si ce n'était pas un emoji) */
+  text-shadow: 0 0 10px var(--accent-blue);
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.card-description {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.card-button {
+  background: var(--accent-blue);
+  color: var(--primary-bg);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  border: none; /* Enlèvement de la bordure pour un look plus lisse */
+  align-self: flex-start;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ------------------ Chatbot Styles ------------------ */
+
+.chatbot-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+}
+
+.chatbot-icon {
+  background: var(--accent-blue);
+  color: var(--text-light);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+
+.chatbot-icon:hover {
+  transform: scale(1.05);
+  background: var(--accent-hover);
+}
+
+.chatbot-window {
+  bottom: 100px;
+  right: 25px;
+  width: 350px;
+  max-height: 550px;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  display: none;
+  flex-direction: column;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+.chatbot-header {
+  background: var(--primary-bg);
+  color: var(--text-light);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 600;
+}
+
+.chatbot-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 15px;
+  background: #141C2E; /* Fond des messages un peu plus clair que le fond principal */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text-light);
+}
+
+.chatbot-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: var(--secondary-bg);
+}
+
+.category-btn, .question-btn {
+  background: #2D3A50;
+  color: var(--text-light);
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  font-weight: 400;
+}
+
+.category-btn:hover, .question-btn:hover {
+  background: var(--accent-blue);
+  border-color: var(--accent-hover);
+  transform: translateX(3px);
+  color: var(--primary-bg); /* Texte foncé sur survol bleu */
+}
+
+.return-btn {
+  background: var(--accent-blue);
+  color: var(--primary-bg);
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  transition: background 0.3s ease;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.return-btn:hover {
+  background: var(--accent-hover);
+}
+
+.bot-message {
+  background: #2D3A50;
+  color: var(--text-light);
+  padding: 10px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-blue);
+  font-weight: 400;
+}
+
+.bot-message.user-question {
+  background: #364763;
+  color: var(--text-light);
+  border-left-color: var(--text-light);
+  align-self: flex-end;
+  max-width: 80%;
+}
+
+.bot-message.question-highlight {
+  background: rgba(74, 144, 226, 0.1); /* Bleu clair pour les catégories */
+  color: var(--accent-blue);
+  border-left-color: var(--accent-blue);
+}
+
+.bot-message.answer-display {
+  background: rgba(74, 144, 226, 0.2); /* Bleu plus soutenu pour la réponse */
+  color: var(--text-light);
+  border-left-color: var(--accent-hover);
+  font-style: italic;
+}
