@@ -1,0 +1,256 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Lycée Château Blanc - Portail</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="portal-container">
+    <header class="portal-header">
+      <h1>Lycée Château Blanc</h1>
+      <p>Votre portail numérique pour les ressources et l'orientation.</p>
+    </header>
+
+    <div class="portal-grid">
+      <div class="portal-card" onclick="window.location.href='https://umi4555.github.io/site/'">
+        <div class="card-content">
+          <div class="card-icon">🏫</div>
+          <h2 class="card-title">Site Officiel du Lycée</h2>
+          <p class="card-description">Actualités, contacts et informations administratives officielles.</p>
+          <a href="https://umi4555.github.io/site/" class="card-button">Visiter le site</a>
+        </div>
+      </div>
+
+      <div class="portal-card" onclick="window.location.href='https://menucantinefinal.netlify.app/'">
+        <div class="card-content">
+          <div class="card-icon">🍽️</div>
+          <h2 class="card-title">Menu de la Cantine</h2>
+          <p class="card-description">Découvrez les menus de la semaine et partagez votre avis.</p>
+          <a href="https://umi4555.github.io/menu-cantine/" class="card-button">Accéder aux menus</a>
+        </div>
+      </div>
+
+      <div class="portal-card" onclick="window.location.href='https://umi4555.github.io/video/'">
+        <div class="card-content">
+          <div class="card-icon">📹</div>
+          <h2 class="card-title">Présentation Bac Pro CIEL</h2>
+          <p class="card-description">Découvrez notre formation professionnelle en Cybersécurité, Informatique et Réseaux, Électronique.</p>
+          <a href="https://umi4555.github.io/video/" class="card-button">Regarder la vidéo</a>
+        </div>
+      </div>
+
+      <div class="portal-card" onclick="window.location.href='https://umi4555.github.io/generateur-cv-/'">
+        <div class="card-content">
+          <div class="card-icon">⚙️</div>
+          <h2 class="card-title">Générateur de CV</h2>
+          <p class="card-description">Créez votre CV professionnel et adapté à votre filière en quelques clics.</p>
+          <a href="https://umi4555.github.io/generateur-cv-/" class="card-button">Générer le CV</a>
+        </div>
+      </div>
+
+
+      <div class="portal-card" onclick="window.location.href='https://umi4555.github.io/Quizz/'">
+        <div class="card-content">
+          <div class="card-icon">🧩</div>
+          <h2 class="card-title">Quizz Pédagogiques</h2>
+          <p class="card-description">Testez et consolidez vos connaissances de manière interactive.</p>
+          <a href="https://umi4555.github.io/Quizz/" class="card-button">Commencer le Quizz</a>
+        </div>
+      </div>
+
+      <div class="portal-card" onclick="window.location.href='https://umi4555.github.io/Jeux/'">
+        <div class="card-content">
+          <div class="card-icon">🎮</div>
+          <h2 class="card-title">Espace Jeux</h2>
+          <p class="card-description">Détendez-vous et découvrez nos jeux interactifs éducatifs et ludiques.</p>
+          <a href="https://umi4555.github.io/Jeux/" class="card-button">Jouer maintenant</a>
+        </div>
+      </div>
+
+
+      <div class="portal-card" onclick="window.location.href='https://umi4555.github.io/coupon-reponse/'">
+        <div class="card-content">
+          <div class="card-icon">📄</div>
+          <h2 class="card-title">Coupons-Réponse (Stages)</h2>
+          <p class="card-description">Téléchargez les documents PDF nécessaires pour vos démarches de stage.</p>
+          <a href="https://umi4555.github.io/coupon-reponse/" class="card-button">Télécharger</a>
+        </div>
+      </div>
+
+	<div class="portal-card" onclick="window.location.href='https://umi4555.github.io/espace-ecoute-/'">
+        <div class="card-content">
+          <div class="card-icon">📬</div>
+          <h2 class="card-title">Boîte à Questions Anonyme</h2>
+          <p class="card-description">Posez vos questions ou partagez vos inquiétudes en toute confidentialité et sécurité.</p>
+          <a href="https://umi4555.github.io/espace-ecoute-/" class="card-button">Accéder à l'espace</a>
+        </div>
+      </div>
+
+
+      <div class="portal-card" onclick="window.location.href='bien-etre.html'">
+        <div class="card-content">
+          <div class="card-icon">🧘‍♀️</div>
+          <h2 class="card-title">Espace Bien-être</h2>
+          <p class="card-description">Ressources et conseils pour votre santé mentale, physique et votre équilibre.</p>
+          <a href="bien-etre.html" class="card-button">Découvrir</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="chatbot-container">
+    <div class="chatbot-icon" onclick="toggleChatbot()">💬</div>
+    <div class="chatbot-window" id="chatbotWindow">
+      <div class="chatbot-header">
+        <span>Chatbot Assistant</span>
+        <span onclick="toggleChatbot()" style="cursor: pointer;">❌</span>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages"></div>
+      <div class="chatbot-categories" id="chatbotCategories"></div>
+    </div>
+  </div>
+
+  <script>
+    const chatbotQuestions = [
+      { category: 'Informations Générales (Bac Pro CIEL)', questions: [
+        'Qu\'est-ce que le Bac Pro CIEL ?',
+        'Quelles sont les matières étudiées ?',
+        'Quels métiers après le Bac Pro CIEL ?'
+      ]},
+      { category: 'Ressources Pédagogiques et Carrières', questions: [
+        'Peut-on poursuivre des études ?',
+        'Y a-t-il des stages en entreprise ?',
+        'Comment bien réussir en Bac Pro ?',
+        'Pourquoi la cybersécurité est importante ?'
+      ]},
+      { category: 'Fonctionnalités du Portail', questions: [
+        'Quels sont tous les services du portail ?',
+        'Où trouver le Menu de la Cantine ?',
+        'Comment fonctionne le Générateur de CV ?',
+        'À quoi sert le Coupon-Réponse ?',
+        'Qu\'est-ce que la Boîte à Questions Anonyme ?',
+        'Où trouver les ressources de Bien-être ?'
+      ]},
+      { category: 'À propos du site', questions: [
+        'Qui a créé ce site ?',
+        'Pourquoi ce site a-t-il été créé ?'
+      ]}
+    ];
+
+    const chatbotResponses = {
+      'Qu\'est-ce que le Bac Pro CIEL ?': 'Le Bac Pro CIEL (Cybersécurité, Informatique et Réseaux, Électronique) est une formation qui prépare aux métiers de l\'informatique, des réseaux et de la cybersécurité.',
+      'Quelles sont les matières étudiées ?': 'En plus des matières générales, les matières professionnelles incluent la programmation, les réseaux, la cybersécurité, l\'électronique et la maintenance informatique.',
+      'Quels métiers après le Bac Pro CIEL ?': 'Technicien informatique, administrateur réseau, technicien en cybersécurité, installateur de systèmes électroniques, etc.',
+      'Peut-on poursuivre des études ?': 'Oui ! Il est possible de faire un BTS, un DUT, ou même une école d\'ingénieur après une prépa adaptée.',
+      'Y a-t-il des stages en entreprise ?': 'Oui, plusieurs périodes de stages sont prévues pour acquérir de l\'expérience professionnelle.',
+      'Comment bien réussir en Bac Pro ?': 'Être organisé, bien suivre les cours, faire des recherches personnelles et pratiquer sur des projets concrets.',
+      'Pourquoi la cybersécurité est importante ?': 'Car les menaces informatiques sont de plus en plus nombreuses et les entreprises recherchent des experts en sécurité.',
+      // NOUVELLES QUESTIONS SUR LE PORTAIL
+      'Quels sont tous les services du portail ?': 'Le portail centralise l\'accès au Site du Lycée, au Menu de la Cantine, à la Vidéo Bac Pro CIEL, au Générateur de CV, au Quizz, aux Jeux, au Coupon-Réponse, à la Boîte à Questions Anonyme, et à l\'Espace Bien-être.',
+      'Où trouver le Menu de la Cantine ?': 'Le lien "Menu de la Cantine" permet de consulter les menus de la semaine et de laisser votre avis.',
+      'Comment fonctionne le Générateur de CV ?': 'Le Générateur de CV permet de créer votre CV automatiquement, adapté à votre filière, en quelques clics. C\'est un outil précieux pour vos recherches de stage.',
+      'À quoi sert le Coupon-Réponse ?': 'Le Coupon-Réponse vous permet de télécharger les documents PDF nécessaires pour vos demandes de stage, facilitant vos démarches administratives.',
+      'Qu\'est-ce que la Boîte à Questions Anonyme ?': 'C\'est un espace de confidentialité pour poser des questions ou partager des inquiétudes en toute discrétion. Vos messages restent confidentiels.',
+      'Où trouver les ressources de Bien-être ?': 'L\'Espace Bien-être regroupe des ressources pour la santé mentale et physique des élèves, essentiel pour votre équilibre.',
+      'Qui a créé ce site ?': 'Ce site a été conçu par Umit et Abdoul Aziz dans le cadre de leur formation.',
+      'Pourquoi ce site a-t-il été créé ?': 'Pour aider les élèves du Bac Pro CIEL en leur fournissant des informations, des ressources et des outils interactifs, le tout centralisé.'
+    };
+
+    function toggleChatbot() {
+      const chatbotWindow = document.getElementById('chatbotWindow');
+      const isOpen = chatbotWindow.style.display === 'flex';
+      
+      chatbotWindow.style.display = isOpen ? 'none' : 'flex';
+      document.body.classList.toggle('chatbot-open', !isOpen);
+      
+      if (!isOpen) {
+        displayCategories();
+      }
+    }
+
+    function displayCategories() {
+      const chatbotCategories = document.getElementById('chatbotCategories');
+      const chatbotMessages = document.getElementById('chatbotMessages');
+      
+      chatbotCategories.innerHTML = '';
+      chatbotMessages.innerHTML = `
+        <div class="bot-message">
+          Bonjour ! Je suis votre assistant. Choisissez une catégorie de questions.
+        </div>
+      `;
+
+      chatbotQuestions.forEach(category => {
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'category-btn';
+        categoryDiv.textContent = category.category;
+        categoryDiv.onclick = () => {
+          document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+          categoryDiv.classList.add('active');
+          displayQuestions(category);
+        };
+        chatbotCategories.appendChild(categoryDiv);
+      });
+    }
+
+    function displayQuestions(category) {
+      const chatbotCategories = document.getElementById('chatbotCategories');
+      const chatbotMessages = document.getElementById('chatbotMessages');
+      
+      chatbotCategories.innerHTML = '';
+      chatbotMessages.innerHTML += `
+        <div class="bot-message question-highlight">
+          Catégorie : ${category.category}. Choisissez une question.
+        </div>
+      `;
+
+      category.questions.forEach(question => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question-btn';
+        questionDiv.textContent = question;
+        questionDiv.onclick = () => {
+          document.querySelectorAll('.question-btn').forEach(btn => btn.classList.remove('active'));
+          questionDiv.classList.add('active');
+          showAnswer(question);
+        };
+        chatbotCategories.appendChild(questionDiv);
+      });
+
+      const returnDiv = document.createElement('div');
+      returnDiv.className = 'return-btn';
+      returnDiv.textContent = 'Retour aux catégories';
+      returnDiv.onclick = displayCategories;
+      chatbotCategories.appendChild(returnDiv);
+    }
+
+    function showAnswer(question) {
+      const chatbotMessages = document.getElementById('chatbotMessages');
+      const chatbotCategories = document.getElementById('chatbotCategories');
+      
+      const messageContainer = document.createElement('div');
+      messageContainer.innerHTML = `
+        <div class="bot-message user-question">
+          ${question}
+        </div>
+        <div class="bot-message answer-display">
+          ${chatbotResponses[question]}
+        </div>
+      `;
+      
+      chatbotMessages.appendChild(messageContainer);
+      
+      chatbotCategories.innerHTML = `
+        <button onclick="displayCategories()" class="return-btn">Retour aux catégories</button>
+      `;
+      
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    // Initialisation
+    // Pas d'appel initial ici pour garder la fenêtre fermée
+  </script>
+</body>
+</html>
